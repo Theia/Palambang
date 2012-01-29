@@ -8,6 +8,9 @@ void RahmenLinks(void);
 int Farbe(int);
 float FarbeConv(int);
 void LeerKomplett(void);
+void Randomcounter();
+int Zufallsfarbe();
+int Zufall();
 
 
 

@@ -18,6 +18,10 @@
 using namespace std;
 
 
+int Zufallsfarbe();
+extern int zaubertextzeilen;
+
+
 
 void LeerKomplett(void){
     int i=0;
@@ -226,3 +230,154 @@ float FarbeConv(int zufallsfarbe){
 
 
 
+void Randomcounter(){                    // Toter Code zur Anzeige der Verteilung der Seltenheitsstufen
+    int crot=0;
+    int cgrau=0;
+    int cweiss=0;
+    int cblau=0;
+    int cgruen=0;
+    int clila=0;
+    int cgelb=0;
+    int cspecial=0;
+    int momentan=0;
+
+    int k=0;
+
+
+    while(k<100000){
+        momentan=Zufallsfarbe();
+
+        if(momentan==8){
+            cgrau++;
+        }
+
+        if(momentan==13){
+            clila++;
+        }
+
+        if(momentan==10){
+            cgruen++;
+        }
+
+        if(momentan==9){
+            cblau++;
+        }
+
+        if(momentan==15){
+            cweiss++;
+        }
+
+        if(momentan==12){
+            crot++;
+        }
+
+        if(momentan==14){
+            cgelb++;
+        }
+
+        if(momentan==24){
+            cspecial++;
+        }
+
+
+        k++;
+
+    }
+
+
+    Curpos(25,8);
+    cout << "Grau: " << cgrau << endl;
+    Curpos(25,9);
+    cout << "Weiss: " << cweiss << endl;
+    Curpos(25,10);
+    cout << "Grün: " << cgruen << endl;
+    Curpos(25,11);
+    cout << "Blau: " << cblau << endl;
+    Curpos(25,12);
+    cout << "Lila: " << clila << endl;
+    Curpos(25,13);
+    cout << "Rot: " << crot <<  endl;
+    Curpos(25,14);
+    cout << "Gelb: " << cgelb <<  endl;
+    Curpos(25,15);
+    cout << "Special: " << cspecial <<  endl;
+
+
+}
+
+
+int Zufall(){
+     int i = rand();
+     i=(i%10000)+1;
+return i;
+}
+
+
+
+
+int Zufallsfarbe(){
+    int output=0;
+    int bonus = rand();
+    bonus=bonus%10;
+    int zufallsfarbe=0;
+    zufallsfarbe = Zufall();
+
+
+    if(zufallsfarbe<=4000){      //grau
+        output=8;
+        zaubertextzeilen=0;
+        return output;
+    }
+
+    if(zufallsfarbe>4000 && zufallsfarbe<=7000){      //weiß
+        output=15;
+        zaubertextzeilen=0;
+        return output;
+    }
+
+    if(zufallsfarbe>7000 && zufallsfarbe<=8750){      //grün
+        output=10;
+        zaubertextzeilen=1;
+        return output;
+    }
+
+    if(zufallsfarbe>8750 && zufallsfarbe<=9500){      //blau
+        output=9;
+        zaubertextzeilen=2;
+        return output;
+    }
+
+    if(zufallsfarbe>9500 && zufallsfarbe<=9950){      //lila
+        output=13;
+        zaubertextzeilen=3;
+        return output;
+    }
+
+    if(zufallsfarbe>9950 && zufallsfarbe <=9990){      //rot
+        output=12;
+        zaubertextzeilen=4;
+        return output;
+    }
+
+    if(zufallsfarbe>9990 && zufallsfarbe <=9999){      //gelb
+        output=14;
+        zaubertextzeilen=6;
+        return output;
+    }
+
+    if(zufallsfarbe==10000){      //hintergrund Ultra Rare
+        if(bonus==5){
+            output=24;
+            zaubertextzeilen=10;
+            return output;
+        }
+
+        else if(bonus != 5){
+            output=14;
+            zaubertextzeilen=6;
+            return output;
+        }
+    }
+    return 0;
+
+}

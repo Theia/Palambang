@@ -12,7 +12,7 @@
 
 
 GegenstandInfo item = {0,0,0};
-
+extern int zaubertextzeilen;
 
 
 using namespace std;
@@ -274,7 +274,47 @@ Geld GeldConv(int input){
 
 
 
+int Zaubertext(int i3, int anzeige){
+    if(anzeige==0){
+        Curpos(25,9);
+    }
+    int n=0;
+    int i=0;
+    int erg=0;
+    while(n<zaubertextzeilen){
+        i = rand();
+        erg=erg+(i%19)+1;
+        n++;
+   }
 
+        //int
+        if(zaubertextzeilen>0 && anzeige == 0){
+            switch(i3){
+
+                case 0: cout << "+ " << erg << " Intelligenz";
+                        break;
+
+                case 1: cout << "+ " << erg << " Ruestung";
+                        break;
+
+                case 2: cout << "+ " << erg << " Angriffskraft";
+                        break;
+
+                case 3: cout << "+ " << erg << " Willenskraft";
+                        break;
+
+                case 4: cout << "+ " << erg << " Lebenspunkte";
+                        break;
+            }
+        }
+
+    if(anzeige==0){
+        Curpos(25,9+n);
+    }
+
+    //cout  << "zaub" << endl;
+    return erg;
+}
 
 
 

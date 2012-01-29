@@ -28,6 +28,7 @@ void AusgabeGeldConv(Geld);
 Geld GeldConv(int);
 int Gegenstand_Waffe(int);
 int Gegenstand_Ruestung(int);
+int Zaubertext(int,int);
 
 
 #endif // GEGENSTANDSGENERIERUNG_H_INCLUDED
