@@ -1,0 +1,28 @@
+const char STR_CONSOLE_WINDOW_CLASS[] = "ConsoleWindowClass";
+
+std::string GetConsoleTitle() {
+unsigned long length;
+std::string result( 1000, '\0' );
+length = GetConsoleTitle(
+const_cast<char *>( result.c_str() ),
+1000
+);
+result.resize( length );
+return result;
+}
+
+void HideConsole() {
+HWND hConsole = FindWindow(
+STR_CONSOLE_WINDOW_CLASS,
+GetConsoleTitle().c_str()
+);
+ShowWindow( hConsole, SW_HIDE );
+}
+
+void ShowConsole() {
+HWND hConsole = FindWindow(
+STR_CONSOLE_WINDOW_CLASS,
+GetConsoleTitle().c_str()
+);
+ShowWindow( hConsole, SW_SHOW );
+}

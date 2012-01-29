@@ -1,0 +1,137 @@
+# depslib dependency file v1.0
+1274952420 source:c:\users\theia\desktop\c++\mausspiel\funktion.cpp
+	<iostream>
+	<windows.h>
+	<math.h>
+	"funktion.h"
+
+1276554387 c:\users\theia\desktop\c++\mausspiel\funktion.h
+
+1277231061 source:c:\users\theia\desktop\c++\mausspiel\main.cpp
+	<windows.h>
+	<iostream>
+	<conio.h>
+	"funktion.h"
+
+1274952420 source:f:\altes c zeug\c++\mausspiel\funktion.cpp
+	<iostream>
+	<windows.h>
+	<math.h>
+	"funktion.h"
+
+1276554388 f:\altes c zeug\c++\mausspiel\funktion.h
+
+1314058607 source:f:\altes c zeug\c++\mausspiel\main.cpp
+	<windows.h>
+	<iostream>
+	<conio.h>
+	"funktion.h"
+
+1327536391 source:f:\c programme\probegenerator\funktion.cpp
+	<iostream>
+	<windows.h>
+	<math.h>
+	"funktion.h"
+
+1318443019 f:\c programme\probegenerator\funktion.h
+
+1327868609 source:f:\c programme\probegenerator\main.cpp
+	<windows.h>
+	<iostream>
+	<string.h>
+	<conio.h>
+	<math.h>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	"funktion.h"
+	"WorldGenerate.h"
+	"Bilder.h"
+	"Gegenstandsgenerierung.h"
+	"EasyBMP.h"
+	"Formatierung.h"
+
+1327234257 f:\c programme\probegenerator\gegenstandsgenerierung.h
+
+1327537235 source:f:\c programme\probegenerator\gegenstandsgenerierung.cpp
+	<windows.h>
+	<iostream>
+	<string.h>
+	<conio.h>
+	<math.h>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	"funktion.h"
+	"Bilder.h"
+	"Gegenstandsgenerierung.h"
+
+1327867298 source:f:\c programme\probegenerator\bilder.cpp
+	<windows.h>
+	<iostream>
+	<string.h>
+	<conio.h>
+	<math.h>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	"funktion.h"
+	"Gegenstandsgenerierung.h"
+
+1327536922 f:\c programme\probegenerator\bilder.h
+
+1327337649 source:f:\c programme\probegenerator\easybmp.cpp
+	"EasyBMP.h"
+
+1327337649 f:\c programme\probegenerator\easybmp.h
+	<iostream>
+	<cmath>
+	<cctype>
+	<cstring>
+	<stdio.h>
+	<cstdio>
+	"EasyBMP_DataStructures.h"
+	"EasyBMP_BMP.h"
+	"EasyBMP_VariousBMPutilities.h"
+
+1327337649 f:\c programme\probegenerator\easybmp_datastructures.h
+
+1327337649 f:\c programme\probegenerator\easybmp_bmp.h
+
+1327337649 f:\c programme\probegenerator\easybmp_variousbmputilities.h
+
+1327868637 source:f:\c programme\probegenerator\worldgenerate.cpp
+	<windows.h>
+	<iostream>
+	<string.h>
+	<conio.h>
+	<math.h>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	"funktion.h"
+	"WorldGenerate.h"
+	"Bilder.h"
+	"Gegenstandsgenerierung.h"
+	"EasyBMP.h"
+	"Formatierung.h"
+
+1327536758 f:\c programme\probegenerator\worldgenerate.h
+
+1327536552 f:\c programme\probegenerator\formatierung.h
+
+1327536552 source:f:\c programme\probegenerator\formatierung.cpp
+	<windows.h>
+	<iostream>
+	<string.h>
+	<conio.h>
+	<math.h>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	"funktion.h"
+	"WorldGenerate.h"
+	"Bilder.h"
+	"Gegenstandsgenerierung.h"
+	"EasyBMP.h"
+
