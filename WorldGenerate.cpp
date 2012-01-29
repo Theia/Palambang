@@ -22,6 +22,8 @@ using namespace std;
 extern char map[1000][1000];
 extern int char_x_versatz;
 extern int char_y_versatz;
+extern int char_x;
+extern int char_y;
 extern int char_map_x;
 extern int char_map_y;
 extern int char_map_offset_x;
@@ -822,6 +824,381 @@ void MapNew2Rand(){
     }
 
 }
+
+
+
+
+
+
+
+
+
+//************************************************************************************************************************************************************
+
+
+
+
+
+
+int Richtung(void){
+
+        int eingabe=0;
+
+        eingabe=getch();
+        if(eingabe==224){
+
+            eingabe=getch();
+                if(eingabe==77){
+                    Curpos(60,0);
+                    cout << "       ";
+                    Curpos(60,0);
+                    cout << "rechts";
+                    return 4;
+                }
+
+
+                if(eingabe==75){
+                    Curpos(60,0);
+                    cout << "       ";
+                    Curpos(60,0);
+                    cout << "links";
+                    return 3;
+                }
+
+                if(eingabe==72){
+                    Curpos(60,0);
+                    cout << "       ";
+                    Curpos(60,0);
+                    cout << "oben";
+                    return 1;
+                }
+
+                if(eingabe==80){
+                    Curpos(60,0);
+                    cout << "       ";
+                    Curpos(60,0);
+                    cout << "unten";
+                    return 2;
+                }
+        }
+
+        return 0;
+}
+
+
+
+
+
+
+//*************************************************************************************************************************************************
+
+
+int RichtungTest2(int richtung){
+
+
+    Curpos(75,0);
+    cout << "   ";
+
+    char stein=219;
+    char kiste=254;
+    char lava=176;
+    char seltenekiste=184;
+    char charakter=1;
+    char superseltenekiste=244;
+    char dungeon=36;
+    char wasser=177;
+
+    if(richtung==1){        // oben
+        if(map[char_x][char_y-1]==32){
+            Curpos(75,0);
+            cout << "ok!";
+            char_y=char_y-1;
+            Curpos(char_map_x+1, char_map_y+1);
+            cout << " ";
+            char_map_y=char_map_y-1;
+            return 1;
+        }
+
+        else if (map[char_x][char_y-1]==kiste){  //kiste
+            map[char_x][char_y-1]=32;
+            char_y=char_y-1;
+            char_map_y=char_map_y-1;
+
+
+
+
+
+            LeerKomplett();
+        Rahmen();
+        RahmenLinks();
+
+            return 2;
+        }
+
+        else if(map[char_x][char_y-1]==seltenekiste){  //special_kiste
+            map[char_x][char_y-1]=32;
+            char_y=char_y-1;
+            char_map_y=char_map_y-1;
+            return 3;
+        }
+
+        else if(map[char_x][char_y-1]==superseltenekiste){  //superspecial_kiste
+            map[char_x][char_y-1]=32;
+            char_y=char_y-1;
+            char_map_y=char_map_y-1;
+            return 4;
+        }
+
+    }
+
+
+
+    if(richtung==2){        //unten
+        if(map[char_x][char_y+1]==32){
+            Curpos(75,0);
+            cout << "ok!";
+            char_y=char_y+1;
+            Curpos(char_map_x+1, char_map_y+1);
+            cout << " ";
+            char_map_y=char_map_y+1;
+            return 1;
+        }
+
+        else if(map[char_x][char_y+1]==kiste){  //kiste
+            map[char_x][char_y+1]=32;
+            char_y=char_y+1;
+            char_map_y=char_map_y+1;
+            return 2;
+        }
+
+        else if(map[char_x][char_y+1]==seltenekiste){  //special_kiste
+            map[char_x][char_y+1]=32;
+            char_y=char_y+1;
+            char_map_y=char_map_y+1;
+            return 3;
+        }
+
+        else if(map[char_x][char_y+1]==superseltenekiste){  //superspecial_kiste
+            map[char_x][char_y+1]=32;
+            char_y=char_y+1;
+            char_map_y=char_map_y+1;
+            return 4;
+        }
+    }
+
+
+
+    if(richtung==3){        //links
+        if(map[char_x-1][char_y]==32){
+            Curpos(75,0);
+            cout << "ok!";
+            Curpos(char_map_x+1, char_map_y+1);
+            cout << " ";
+            char_x=char_x-1;
+            char_map_x=char_map_x-1;
+            return 1;
+        }
+
+        else if(map[char_x-1][char_y]==kiste){  //kiste
+            map[char_x-1][char_y]=32;
+            char_map_x=char_map_x-1;
+            char_x=char_x-1;
+            return 2;
+        }
+
+        else if(map[char_x-1][char_y]==seltenekiste){  //special_kiste
+            map[char_x-1][char_y]=32;
+            char_map_x=char_map_x-1;
+            char_x=char_x-1;
+            return 3;
+        }
+
+        else if(map[char_x-1][char_y]==superseltenekiste){  //superspecial_kiste
+            map[char_x-1][char_y]=32;
+            char_map_x=char_map_x-1;
+            char_x=char_x-1;
+            return 4;
+        }
+    }
+
+
+
+    if(richtung==4){        //rechts
+        if(map[char_x+1][char_y]==32){
+            Curpos(75,0);
+            cout << "ok!";
+            Curpos(char_map_x+1, char_map_y+1);
+            cout << " ";
+            char_x=char_x+1;
+            char_map_x=char_map_x+1;
+            return 1;
+        }
+
+        else if(map[char_x+1][char_y]==kiste){  //kiste
+            map[char_x+1][char_y]=32;
+            char_map_x=char_map_x+1;
+            char_x=char_x+1;
+            return 2;
+        }
+
+        else if(map[char_x+1][char_y]==seltenekiste){  //special_kiste
+            map[char_x+1][char_y]=32;
+            char_map_x=char_map_x+1;
+            char_x=char_x+1;
+            return 3;
+        }
+
+        else if(map[char_x+1][char_y]==superseltenekiste){  //superspecial_kiste
+            map[char_x+1][char_y]=32;
+            char_x=char_x+1;
+            char_map_x=char_map_x+1;
+            return 4;
+        }
+    }
+
+    else{
+        Curpos(75,0);
+        cout << "Ne!";
+        return 0;
+
+    }
+
+}
+
+
+
+
+
+
+//*************************************************************************************************************************************************
+
+
+int RichtungTest(int richtung, int char_x, int char_y){         // oben 1    unten 2    links 3    rechts 4
+
+    Curpos(75,0);
+    cout << "   ";
+
+    char stein=219;
+    char kiste=254;
+    char lava=176;
+    char seltenekiste=184;
+    char charakter=1;
+    char superseltenekiste=244;
+    char dungeon=36;
+
+    if(richtung==1){        // oben
+        if(map[char_x+char_x_versatz][char_y-1+char_y_versatz]==32){
+            Curpos(75,0);
+            cout << "ok!";
+            char_y_versatz=char_y_versatz-1;
+            return 1;
+        }
+
+        else if(map[char_x+char_x_versatz][char_y-1+char_y_versatz]==kiste){  //kiste
+            map[char_x+char_x_versatz][char_y-1+char_y_versatz]=32;
+            return 2;
+        }
+
+        else if(map[char_x+char_x_versatz][char_y-1+char_y_versatz]==seltenekiste){  //special_kiste
+            map[char_x+char_x_versatz][char_y-1+char_y_versatz]=32;
+            return 3;
+        }
+
+        else if(map[char_x+char_x_versatz][char_y-1+char_y_versatz]==superseltenekiste){  //superspecial_kiste
+            map[char_x+char_x_versatz][char_y-1+char_y_versatz]=32;
+            return 4;
+        }
+
+
+    }
+
+
+
+    if(richtung==2){        //unten
+        if(map[char_x+char_x_versatz][char_y+1+char_y_versatz]==32){
+            Curpos(75,0);
+            cout << "ok!";
+            char_y_versatz=char_y_versatz+1;
+            return 1;
+        }
+
+        else if(map[char_x+char_x_versatz][char_y+1+char_y_versatz]==kiste){  //kiste
+            map[char_x+char_x_versatz][char_y+1+char_y_versatz]=32;
+            return 2;
+        }
+
+        else if(map[char_x+char_x_versatz][char_y+1+char_y_versatz]==seltenekiste){  //special_kiste
+            map[char_x+char_x_versatz][char_y+1+char_y_versatz]=32;
+            return 3;
+        }
+
+        else if(map[char_x+char_x_versatz][char_y+1+char_y_versatz]==superseltenekiste){  //superspecial_kiste
+            map[char_x+char_x_versatz][char_y+1+char_y_versatz]=32;
+            return 4;
+        }
+    }
+
+
+
+    if(richtung==3){        //links
+        if(map[char_x-1+char_x_versatz][char_y+char_y_versatz]==32){
+            Curpos(75,0);
+            cout << "ok!";
+            char_x_versatz=char_x_versatz-1;
+            return 1;
+        }
+
+        else if(map[char_x-1+char_x_versatz][char_y+char_y_versatz]==kiste){  //kiste
+            map[char_x-1+char_x_versatz][char_y+char_y_versatz]=32;
+            return 2;
+        }
+
+        else if(map[char_x-1+char_x_versatz][char_y+char_y_versatz]==seltenekiste){  //special_kiste
+            map[char_x-1+char_x_versatz][char_y+char_y_versatz]=32;
+            return 3;
+        }
+
+        else if(map[char_x-1+char_x_versatz][char_y+char_y_versatz]==superseltenekiste){  //superspecial_kiste
+            map[char_x-1+char_x_versatz][char_y+char_y_versatz]=32;
+            return 4;
+        }
+    }
+
+
+
+    if(richtung==4){        //rechts
+        if(map[char_x+1+char_x_versatz][char_y+char_y_versatz]==32){
+            Curpos(75,0);
+            cout << "ok!";
+            char_x_versatz=char_x_versatz+1;
+            return 1;
+        }
+
+        else if(map[char_x+1+char_x_versatz][char_y+char_y_versatz]==kiste){  //kiste
+            map[char_x+1+char_x_versatz][char_y+char_y_versatz]=32;
+            return 2;
+        }
+
+        else if(map[char_x+1+char_x_versatz][char_y+char_y_versatz]==seltenekiste){  //special_kiste
+            map[char_x+1+char_x_versatz][char_y+char_y_versatz]=32;
+            return 3;
+        }
+
+        else if(map[char_x+1+char_x_versatz][char_y+char_y_versatz]==superseltenekiste){  //superspecial_kiste
+            map[char_x+1+char_x_versatz][char_y+char_y_versatz]=32;
+            return 4;
+        }
+    }
+
+    else{
+        return 0;
+
+    }
+
+}
+
+
+
 
 
 

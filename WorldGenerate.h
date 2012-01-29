@@ -12,6 +12,10 @@ void CreateDungeon(int, int);
 void MapNew2();
 void MapNew2Rand();
 
+int Richtung(void);
+int RichtungTest(int, int, int);
+int RichtungTest2(int);
+
 
 
 
