@@ -9,10 +9,18 @@
 #include "funktion.h"
 #include "Bilder.h"
 #include "Gegenstandsgenerierung.h"
+#include "Formatierung.h"
 
 
 GegenstandInfo item = {0,0,0};
 extern int zaubertextzeilen;
+extern int kistegeoff;
+extern int farbe;
+extern int hide_bild;
+extern float wert;
+extern int mengeverzauberungen;
+extern int char_wert;
+
 
 
 using namespace std;
@@ -321,6 +329,104 @@ int Zaubertext(int i3, int anzeige){
 
 
 
+
+void Kistengenerierung(int input, int input2){
+
+
+    int best_gegenstandID=0;                // Schwert, Schuhe, Schild...
+    int best_colorofthis=0;                 // Lila, Rot...
+    int best_number_of_enchant=0;           // + 25... + 33...
+    int best_enchanttype=0;                 // Mana, Lebenspunkte...
+    float best=0;
+    int wert_einser=0;
+    int farbe=0;
+    int fortschritt=0;
+    GegenstandInfo halter = {0,0,0};
+    Geld wert_Conv={0,0,0,0};
+
+
+    Curpos(28,22);
+    cout << "                                ";
+    Curpos(1,2);
+    cout << "                                                                  ";
+
+
+    hide_bild=1;
+
+    Curpos(1,1);
+    cout << "                                                          ";
+
+
+
+    for(int i=0; i<input; i++){
+
+        if(i%1000==0){
+            if(input2==1){
+                fortschritt=(i*100)/input;
+                Curpos(20,3);
+                Farbe(13);
+                cout << "                       ";
+                Curpos(20,3);
+                HANDLE hConsole;
+                hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+                SetConsoleTextAttribute(hConsole, 8);
+                cout << "Fortschritt: " << fortschritt << "%";
+            }
+        }
+
+
+
+        farbe=Farbe(Zufallsfarbe());
+        wert=FarbeConv(farbe);
+        halter=Gegenstand(zaubertextzeilen, hide_bild);
+        mengeverzauberungen=halter.gegenstand_number_enchant;
+        wert_einser=rand();
+        wert_einser=wert_einser%40;
+        wert_einser=wert_einser-20;
+
+        wert=(1000*wert)+(mengeverzauberungen*wert*100)+wert_einser;
+
+        if(wert>best){
+            best=wert;
+            best_colorofthis=farbe;     //8,15,10,9,13,10
+            best_number_of_enchant=halter.gegenstand_number_enchant;
+            best_enchanttype=halter.verzauberung;
+            best_gegenstandID=halter.gegenstandID;
+
+        }
+    }
+
+
+    Leer();
+    Curpos(25,7);
+    Farbe(best_colorofthis);
+    BName(best_gegenstandID);
+    BZauber(best_enchanttype);
+    if(best_number_of_enchant>0){
+        BStats(best_number_of_enchant, best_enchanttype);
+    }
+    Bild(best_gegenstandID);
+
+    Farbe(13);
+    Curpos(20,3);           // Löschen der Prozentanzeige
+    cout << "                     ";
+
+    Curpos(1,2);
+    cout << "                                                 ";
+    Curpos(1,2);
+    HANDLE hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, 15);
+    wert_Conv=GeldConv(best);
+    cout << "Wert des Gegenstandes: ";
+    AusgabeGeldConv(wert_Conv);
+    char_wert=char_wert+best;
+
+    hide_bild=0;
+    kistegeoff=1;
+
+
+}
 
 
 

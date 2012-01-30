@@ -176,9 +176,9 @@
 
 1327536922 c:\users\marcus\desktop\palambang\bilder.h
 
-1327878639 c:\users\marcus\desktop\palambang\gegenstandsgenerierung.h
+1327882674 c:\users\marcus\desktop\palambang\gegenstandsgenerierung.h
 
-1327878663 source:c:\users\marcus\desktop\palambang\gegenstandsgenerierung.cpp
+1327883556 source:c:\users\marcus\desktop\palambang\gegenstandsgenerierung.cpp
 	<windows.h>
 	<iostream>
 	<string.h>
@@ -190,6 +190,7 @@
 	"funktion.h"
 	"Bilder.h"
 	"Gegenstandsgenerierung.h"
+	"Formatierung.h"
 
 1327879971 source:c:\users\marcus\desktop\palambang\worldgenerate.cpp
 	<windows.h>
@@ -215,7 +216,7 @@
 	<math.h>
 	"funktion.h"
 
-1327879030 source:c:\users\marcus\desktop\palambang\main.cpp
+1327883474 source:c:\users\marcus\desktop\palambang\main.cpp
 	<windows.h>
 	<iostream>
 	<string.h>

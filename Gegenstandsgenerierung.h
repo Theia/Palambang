@@ -29,6 +29,7 @@ Geld GeldConv(int);
 int Gegenstand_Waffe(int);
 int Gegenstand_Ruestung(int);
 int Zaubertext(int,int);
+void Kistengenerierung(int, int);
 
 
 #endif // GEGENSTANDSGENERIERUNG_H_INCLUDED
