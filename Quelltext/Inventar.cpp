@@ -6,12 +6,15 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctime>
 #include "funktion.h"
 #include "Formatierung.h"
 #include "WorldGenerate.h"
 
 
 using namespace std;
+
+
 
 
 int Inventar(){

@@ -23,6 +23,7 @@
 #include <conio.h>
 #include <math.h>
 #include <time.h>
+#include <ctime>
 #include <stdlib.h>
 #include <stdio.h>
 #include "funktion.h"
@@ -33,6 +34,7 @@
 #include "Gegenstandsgenerierung.h"
 #include "EasyBMP.h"
 #include "Formatierung.h"
+
 
 
 
@@ -61,8 +63,10 @@ int mengeverzauberungen=0;
 
 
 
-
 int main(){
+
+    //Datum = GetCurrentTime();
+
 
     srand( time(NULL) );
     int debug=0;
@@ -86,6 +90,14 @@ int main(){
 
 while(1){
 
+        if(kistegeoff==0){
+            Curpos(1,0);
+            cout << "                                        ";
+            Curpos(1,0);
+            cout << "x:" << char_x << "  | y:" << char_y;
+        }
+
+
         richtung=Richtung();                // Hier erfolgt Eingabe
 
         if(kistegeoff==1){
@@ -107,7 +119,6 @@ while(1){
         cout << "Aktuelles Geld: ";
         char_Geld=GeldConv(char_wert);
         AusgabeGeldConv(char_Geld);
-
 
 
         richtungok=RichtungTest2(richtung);

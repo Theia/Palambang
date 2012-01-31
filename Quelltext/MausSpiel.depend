@@ -354,7 +354,7 @@
 	"funktion.h"
 	"Gegenstandsgenerierung.h"
 
-1328038734 source:c:\users\marcus\desktop\palambang\quelltext\inventar.cpp
+1328041450 source:c:\users\marcus\desktop\palambang\quelltext\inventar.cpp
 	<windows.h>
 	<iostream>
 	<string.h>
@@ -363,8 +363,10 @@
 	<time.h>
 	<stdlib.h>
 	<stdio.h>
+	<ctime>
 	"funktion.h"
 	"Formatierung.h"
+	"WorldGenerate.h"
 
 1328039021 c:\users\marcus\desktop\palambang\quelltext\inventar.h
 
