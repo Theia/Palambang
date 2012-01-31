@@ -31,6 +31,11 @@ extern int char_map_y;
 extern int char_map_offset_x;
 extern int char_map_offset_y;
 
+extern int steps;
+extern int chest_1;
+extern int chest_2;
+extern int chest_3;
+
 
 
 void BmpGenerate(void){     // Funktion zur Erzeugung des BitMaps; benötigt ->    extern char map[1000][1000]
@@ -960,6 +965,7 @@ int RichtungTest2(int richtung){
 
     if(richtung==1){        // oben
         if(map[char_x][char_y-1]==32){
+            steps++;
             Curpos(75,0);
             cout << "ok!";
             char_y=char_y-1;
@@ -970,6 +976,8 @@ int RichtungTest2(int richtung){
         }
 
         else if (map[char_x][char_y-1]==kiste){  //kiste
+            chest_1++;
+            steps++;
             map[char_x][char_y-1]=32;
             char_y=char_y-1;
             char_map_y=char_map_y-1;
@@ -986,6 +994,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x][char_y-1]==seltenekiste){  //special_kiste
+            chest_2++;
+            steps++;
             map[char_x][char_y-1]=32;
             char_y=char_y-1;
             char_map_y=char_map_y-1;
@@ -993,6 +1003,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x][char_y-1]==superseltenekiste){  //superspecial_kiste
+            chest_3++;
+            steps++;
             map[char_x][char_y-1]=32;
             char_y=char_y-1;
             char_map_y=char_map_y-1;
@@ -1005,6 +1017,7 @@ int RichtungTest2(int richtung){
 
     if(richtung==2){        //unten
         if(map[char_x][char_y+1]==32){
+            steps++;
             Curpos(75,0);
             cout << "ok!";
             char_y=char_y+1;
@@ -1015,6 +1028,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x][char_y+1]==kiste){  //kiste
+            chest_1++;
+            steps++;
             map[char_x][char_y+1]=32;
             char_y=char_y+1;
             char_map_y=char_map_y+1;
@@ -1022,6 +1037,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x][char_y+1]==seltenekiste){  //special_kiste
+            chest_2++;
+            steps++;
             map[char_x][char_y+1]=32;
             char_y=char_y+1;
             char_map_y=char_map_y+1;
@@ -1029,6 +1046,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x][char_y+1]==superseltenekiste){  //superspecial_kiste
+            chest_3++;
+            steps++;
             map[char_x][char_y+1]=32;
             char_y=char_y+1;
             char_map_y=char_map_y+1;
@@ -1040,6 +1059,7 @@ int RichtungTest2(int richtung){
 
     if(richtung==3){        //links
         if(map[char_x-1][char_y]==32){
+            steps++;
             Curpos(75,0);
             cout << "ok!";
             Curpos(char_map_x+1, char_map_y+1);
@@ -1050,6 +1070,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x-1][char_y]==kiste){  //kiste
+            chest_1++;
+            steps++;
             map[char_x-1][char_y]=32;
             char_map_x=char_map_x-1;
             char_x=char_x-1;
@@ -1057,6 +1079,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x-1][char_y]==seltenekiste){  //special_kiste
+            chest_2++;
+            steps++;
             map[char_x-1][char_y]=32;
             char_map_x=char_map_x-1;
             char_x=char_x-1;
@@ -1064,6 +1088,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x-1][char_y]==superseltenekiste){  //superspecial_kiste
+            chest_3++;
+            steps++;
             map[char_x-1][char_y]=32;
             char_map_x=char_map_x-1;
             char_x=char_x-1;
@@ -1075,6 +1101,7 @@ int RichtungTest2(int richtung){
 
     if(richtung==4){        //rechts
         if(map[char_x+1][char_y]==32){
+            steps++;
             Curpos(75,0);
             cout << "ok!";
             Curpos(char_map_x+1, char_map_y+1);
@@ -1085,6 +1112,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x+1][char_y]==kiste){  //kiste
+            chest_1++;
+            steps++;
             map[char_x+1][char_y]=32;
             char_map_x=char_map_x+1;
             char_x=char_x+1;
@@ -1092,6 +1121,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x+1][char_y]==seltenekiste){  //special_kiste
+            chest_2++;
+            steps++;
             map[char_x+1][char_y]=32;
             char_map_x=char_map_x+1;
             char_x=char_x+1;
@@ -1099,6 +1130,8 @@ int RichtungTest2(int richtung){
         }
 
         else if(map[char_x+1][char_y]==superseltenekiste){  //superspecial_kiste
+            chest_3++;
+            steps++;
             map[char_x+1][char_y]=32;
             char_x=char_x+1;
             char_map_x=char_map_x+1;

@@ -40,6 +40,8 @@
 		<Unit filename="Formatierung.h" />
 		<Unit filename="Gegenstandsgenerierung.cpp" />
 		<Unit filename="Gegenstandsgenerierung.h" />
+		<Unit filename="Inventar.cpp" />
+		<Unit filename="Inventar.h" />
 		<Unit filename="WorldGenerate.cpp" />
 		<Unit filename="WorldGenerate.h" />
 		<Unit filename="funktion.cpp" />

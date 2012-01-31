@@ -8,22 +8,25 @@
 		<Cursor position="124" topLine="0" />
 	</File>
 	<File name="EasyBMP.cpp" open="1" top="0" tabpos="12">
-		<Cursor position="25576" topLine="971" />
+		<Cursor position="25576" topLine="974" />
 	</File>
 	<File name="Formatierung.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="591" topLine="0" />
+		<Cursor position="591" topLine="339" />
 	</File>
 	<File name="Formatierung.h" open="1" top="0" tabpos="11">
-		<Cursor position="261" topLine="0" />
+		<Cursor position="202" topLine="0" />
 	</File>
 	<File name="Gegenstandsgenerierung.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="8808" topLine="55" />
+		<Cursor position="8808" topLine="0" />
 	</File>
 	<File name="Gegenstandsgenerierung.h" open="1" top="0" tabpos="3">
 		<Cursor position="641" topLine="0" />
 	</File>
+	<File name="Inventar.cpp" open="1" top="1" tabpos="13">
+		<Cursor position="1723" topLine="64" />
+	</File>
 	<File name="WorldGenerate.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="22536" topLine="878" />
+		<Cursor position="19507" topLine="228" />
 	</File>
 	<File name="WorldGenerate.h" open="1" top="0" tabpos="9">
 		<Cursor position="291" topLine="0" />
@@ -34,7 +37,7 @@
 	<File name="funktion.h" open="1" top="0" tabpos="5">
 		<Cursor position="467" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="1943" topLine="75" />
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1189" topLine="45" />
 	</File>
 </CodeBlocks_layout_file>

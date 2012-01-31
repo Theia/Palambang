@@ -15,6 +15,18 @@
 */
 
 
+/*
+    grau=8;
+    weiß=15;
+    grün=10;
+    blau=9;
+    lila=13;
+    rot=12;
+    gelb=14;
+    blau=24;
+
+*/
+
 // Startposition charakter  x=501  y=502
 
 #include <windows.h>
@@ -61,9 +73,19 @@ int hide_bild=0;
 float wert=0;
 int mengeverzauberungen=0;
 
+int steps=0;
+int chest_1=0;
+int chest_2=0;
+int chest_3=0;
+
+time_t t_start;
+time_t t_messure;
+
 
 
 int main(){
+
+    t_start = time(0);
 
     //Datum = GetCurrentTime();
 
