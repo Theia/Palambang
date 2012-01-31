@@ -14,6 +14,8 @@
 #include "Gegenstandsgenerierung.h"
 #include "EasyBMP.h"
 #include "Formatierung.h"
+#include "Inventar.h"
+
 
 
 using namespace std;
@@ -108,7 +110,7 @@ void BmpGenerate(void){     // Funktion zur Erzeugung des BitMaps; benötigt ->  
 
                 if(map[i][j]==npc){
                     output(i,j)->Red=0;
-                    output(i,j)->Green=250;
+                    output(i,j)->Green=255;
                     output(i,j)->Blue=0;
                 }
 
@@ -923,6 +925,10 @@ int Richtung(void){
                     cout << "unten";
                     return 2;
                 }
+        }
+
+        else if(eingabe==105){
+            Inventar();
         }
 
         return 0;

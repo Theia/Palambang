@@ -303,7 +303,7 @@
 
 1327879001 c:\users\marcus\desktop\palambang\quelltext\formatierung.h
 
-1328037156 source:c:\users\marcus\desktop\palambang\quelltext\worldgenerate.cpp
+1328038854 source:c:\users\marcus\desktop\palambang\quelltext\worldgenerate.cpp
 	<windows.h>
 	<iostream>
 	<string.h>
@@ -318,6 +318,7 @@
 	"Gegenstandsgenerierung.h"
 	"EasyBMP.h"
 	"Formatierung.h"
+	"Inventar.h"
 
 1327536391 source:c:\users\marcus\desktop\palambang\quelltext\funktion.cpp
 	<iostream>
@@ -352,4 +353,18 @@
 	<stdio.h>
 	"funktion.h"
 	"Gegenstandsgenerierung.h"
+
+1328038734 source:c:\users\marcus\desktop\palambang\quelltext\inventar.cpp
+	<windows.h>
+	<iostream>
+	<string.h>
+	<conio.h>
+	<math.h>
+	<time.h>
+	<stdlib.h>
+	<stdio.h>
+	"funktion.h"
+	"Formatierung.h"
+
+1328039021 c:\users\marcus\desktop\palambang\quelltext\inventar.h
 
