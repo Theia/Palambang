@@ -38,6 +38,7 @@ void BmpGenerate(void){     // Funktion zur Erzeugung des BitMaps; benötigt ->  
 
 
     char stein=219;
+    char npc=2;
     char kiste=254;
     char lava=176;
     char seltenekiste=184;
@@ -100,14 +101,20 @@ void BmpGenerate(void){     // Funktion zur Erzeugung des BitMaps; benötigt ->  
 
 
                 if(map[i][j]==kiste){
-                    output(i,j)->Red=0;
+                    output(i,j)->Red=255;
                     output(i,j)->Green=255;
+                    output(i,j)->Blue=0;
+                }
+
+                if(map[i][j]==npc){
+                    output(i,j)->Red=0;
+                    output(i,j)->Green=250;
                     output(i,j)->Blue=0;
                 }
 
 
                 if(map[i][j]==seltenekiste){
-                    output(i,j)->Red=0;
+                    output(i,j)->Red=255;
                     output(i,j)->Green=255;
                     output(i,j)->Blue=0;
                 }
@@ -134,7 +141,7 @@ void BmpGenerate(void){     // Funktion zur Erzeugung des BitMaps; benötigt ->  
 
 
                 if(map[i][j]==superseltenekiste){
-                    output(i,j)->Red=0;
+                    output(i,j)->Red=255;
                     output(i,j)->Green=255;
                     output(i,j)->Blue=0;
                 }
@@ -309,6 +316,7 @@ void WorldGenerate(void){   // Generiert die Weltkarte in die Globale Variable -
     char charakter=1;
     char superseltenekiste=244;
     char dungeon=36;
+    char npc=2;
 
     int lava_random=0;
     int lava_random2=0;
@@ -358,6 +366,27 @@ void WorldGenerate(void){   // Generiert die Weltkarte in die Globale Variable -
             rand_map_box=rand_map_box%rand_map_help;
             if(rand_map_box==0){
                 map[i][j]=254;
+            }
+            j++;
+        }
+        j=0;
+        i++;
+    }
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    i=0;
+    j=0;
+    while(i<=999){                                          // Generierung der NPCs
+        while(j<=999){
+            rand_map_box=rand();
+            rand_map_help=rand();
+            rand_map_help=rand_map_help%20000+1;
+            rand_map_box=rand_map_box%rand_map_help;
+            if(rand_map_box==0){
+                map[i][j]=npc;
             }
             j++;
         }
@@ -589,6 +618,12 @@ void WorldGenerate(void){   // Generiert die Weltkarte in die Globale Variable -
                 cout << map[462+i][490+j];
             }
 
+            else if(map[462+i][490+j]==npc){
+
+                Farbe(2);
+                cout << map[462+i][490+j];
+            }
+
             else{
                 Farbe(4);
                 cout << map[462+i][490+j];
@@ -753,6 +788,8 @@ void MapNew2Rand(){
     char superseltenekiste=244;
     char dungeon=36;
     char wasser=177;
+    char npc=2;
+
     int help1=0;
     int help2=0;
 
@@ -782,6 +819,12 @@ void MapNew2Rand(){
 
             else if(map[462+i+(char_map_offset_x*75)][490+(char_map_offset_y*21)+j]==lava){
                 Farbe(12);
+                Curpos(i,j);
+                cout << map[462+i+(char_map_offset_x*75)][490+(char_map_offset_y*21)+j];
+            }
+
+            else if(map[462+i+(char_map_offset_x*75)][490+(char_map_offset_y*21)+j]==npc){
+                Farbe(2);
                 Curpos(i,j);
                 cout << map[462+i+(char_map_offset_x*75)][490+(char_map_offset_y*21)+j];
             }
@@ -899,6 +942,7 @@ int RichtungTest2(int richtung){
     Curpos(75,0);
     cout << "   ";
 
+    char npc=2;
     char stein=219;
     char kiste=254;
     char lava=176;

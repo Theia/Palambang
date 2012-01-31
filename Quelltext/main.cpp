@@ -2,16 +2,18 @@
 
 /*
 
+    char npc=2;
     char stein=219;
-    char leer=32;
     char kiste=254;
     char lava=176;
     char seltenekiste=184;
     char charakter=1;
-    char superseltenekiste=243;
+    char superseltenekiste=244;
     char dungeon=36;
+    char wasser=177;
 
 */
+
 
 // Startposition charakter  x=501  y=502
 
