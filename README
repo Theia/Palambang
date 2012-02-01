@@ -4,9 +4,11 @@ Palambang by Theia
 [01.02.2012] - Patchnote 0.0.2:
 	
 	-> Level und Erfahrung hinzugefügt (siehe Inventar)
-		-> Erfahrung bisher nur durch öffnen von Kisten (bessere Kisten, mehr EXP)
+		-> Erfahrung bisher nur durch öffnen von Kisten 
+		   (bessere Kisten, mehr EXP)
 		-> Levelgrenze derzeit bei Level 9
-	-> Musikeinbindung von WAV Dateien (WAV Datei nicht auf GitHub vorhanden, wegen Größe)
+	-> Musikeinbindung von WAV Dateien
+		-> (WAV Datei nicht auf GitHub vorhanden, wegen Größe)
 	-> Name des Charakters bestimmbar
 		-> Ausgabe von generierten Midi Sounds
 	-> Lebensanzeige inklusive Abhängigkeit der Anzahl der Herzen vom Level
