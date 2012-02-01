@@ -47,6 +47,7 @@
 #include "EasyBMP.h"
 #include "Formatierung.h"
 
+#include <MMSystem.h>
 
 
 
@@ -72,6 +73,7 @@ int kistegeoff=0;
 int hide_bild=0;
 float wert=0;
 int mengeverzauberungen=0;
+char name[100];
 
 int steps=0;
 int chest_1=0;
@@ -84,6 +86,37 @@ time_t t_messure;
 
 
 int main(){
+
+    Nameinput();
+
+    char* WAV = "New.wav";// cow.wav is a piano song in hard drive
+    sndPlaySound(WAV, SND_ASYNC);
+
+
+
+
+    HMIDIOUT hMidiOut;
+    UINT result = midiOutOpen(&hMidiOut, MIDI_MAPPER, 0, 0, 0);
+    if(result != MMSYSERR_NOERROR)
+    cout<< ("Geht nicht!");
+
+    BYTE volume = 127;
+    BYTE note = 72;  // Ein C
+/*
+    for(int ih=0; ih<10000; ih++){
+        midiOutShortMsg(hMidiOut, (volume << 16) | (note << ih+200) | ih); // note on
+        Sleep(1);
+
+    }
+*/
+midiOutShortMsg(hMidiOut, (volume << 16) | (note << 8) | 0x91); // note on
+Sleep(1000);
+midiOutShortMsg(hMidiOut, (volume << 16) | (note << 8) | 0x81); // note off
+
+midiOutClose(hMidiOut);
+
+
+
 
     t_start = time(0);
 

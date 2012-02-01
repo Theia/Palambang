@@ -264,7 +264,7 @@
 
 1327337649 c:\users\marcus\desktop\palambang\quelltext\easybmp_variousbmputilities.h
 
-1327879019 source:c:\users\marcus\desktop\palambang\quelltext\formatierung.cpp
+1328127675 source:c:\users\marcus\desktop\palambang\quelltext\formatierung.cpp
 	<windows.h>
 	<iostream>
 	<string.h>
@@ -301,7 +301,7 @@
 	"Gegenstandsgenerierung.h"
 	"Formatierung.h"
 
-1327879001 c:\users\marcus\desktop\palambang\quelltext\formatierung.h
+1328127219 c:\users\marcus\desktop\palambang\quelltext\formatierung.h
 
 1328044955 source:c:\users\marcus\desktop\palambang\quelltext\worldgenerate.cpp
 	<windows.h>
@@ -326,7 +326,7 @@
 	<math.h>
 	"funktion.h"
 
-1328044914 source:c:\users\marcus\desktop\palambang\quelltext\main.cpp
+1328127251 source:c:\users\marcus\desktop\palambang\quelltext\main.cpp
 	<windows.h>
 	<iostream>
 	<string.h>
@@ -342,6 +342,7 @@
 	"Gegenstandsgenerierung.h"
 	"EasyBMP.h"
 	"Formatierung.h"
+	<MMSystem.h>
 
 1327867298 source:c:\users\marcus\desktop\palambang\quelltext\bilder.cpp
 	<windows.h>

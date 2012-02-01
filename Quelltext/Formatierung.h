@@ -11,6 +11,7 @@ void LeerKomplett(void);
 void Randomcounter();
 int Zufallsfarbe();
 int Zufall();
+void Nameinput();
 
 
 

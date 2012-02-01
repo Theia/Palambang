@@ -20,6 +20,7 @@ using namespace std;
 
 int Zufallsfarbe();
 extern int zaubertextzeilen;
+extern char name[100];
 
 
 
@@ -379,5 +380,58 @@ int Zufallsfarbe(){
         }
     }
     return 0;
+
+}
+
+
+
+void Nameinput(){
+    Curpos(20,10);
+    char hallo[100]="Hallo wie gehts!";
+    char hallo2[100]="Wie ist dein Name?";
+    int n=0;
+
+    for (int k=0; k<20; k++){
+        cout << hallo[k];
+        Sleep(60);
+    }
+    Curpos(35,10);
+    cout << " ";
+    Sleep(500);
+    Curpos(35,10);
+    cout << "_";
+    Sleep(500);
+    Curpos(35,10);
+    cout << " ";
+    Sleep(500);
+    Curpos(35,10);
+    cout << "_";
+    Sleep(400);
+    Curpos(35,10);
+    cout << "?";
+    Sleep(1000);
+    Curpos(20,10);
+
+
+    while(n<20){
+        cout << " ";
+        Sleep(20);
+        n++;
+    }
+
+    Curpos(22,11);
+    for (int k=0; k<20; k++){
+        cout << hallo2[k];
+        Sleep(60);
+    }
+
+    Curpos(25,13);
+    gets(name);
+
+
+
+
+
+    Sleep(10000);
 
 }
