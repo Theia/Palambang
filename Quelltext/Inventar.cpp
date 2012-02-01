@@ -22,6 +22,10 @@ extern int chest_1;
 extern int chest_2;
 extern int chest_3;
 extern char name[100];
+extern int char_level;
+extern int char_exp;
+
+int Levelberechnung();
 
 
 
@@ -117,10 +121,32 @@ int Inventar(){
 
 
 
+    //LEVELBERECHNUNG***** LEVEL BERECHNUNG
 
+    char_exp=chest_1+(chest_2*5)+(chest_3*20);
+    /*
+    Level 2 = 10 exp            // Level * 1,7
+    Level 3 = 17 exp
+    Level 4 = 28 exp
+    Level 5 = 49 exp
+    Level 6 = 83 exp
+    Level 7 = 141 exp
+    Level 8 = 241 exp
+    Level 9 = 410 exp
+    */
 
+    Curpos(10,19);
+    Farbe(10);
+    cout << "EXP: ";
+    Farbe(14);
 
+    Levelberechnung();
 
+    Farbe(10);
+    Curpos(10,17);
+    cout << "Level: " ;
+    Farbe(14);
+    cout << char_level;
 
 
     int eingabe=0;
@@ -133,10 +159,11 @@ int Inventar(){
             eingabe=getch();
         }
 
-        if(eingabe==105){
+        if(eingabe==105){       // Buchstabe i
             MapNew2Rand();
             RahmenMap();
             n=0;
+            Lebensanzeige();
         }
     }
 
@@ -146,6 +173,118 @@ int Inventar(){
 
 
 
-using namespace std;
+int Levelberechnung(){
+    if(char_exp>=10){
+        if(char_exp>=17){
+            if(char_exp>=28){
+                if(char_exp>=49){
+                    if(char_exp>=83){
+                        if(char_exp>=141){
+                            if(char_exp>=241){
+                                if(char_exp>=410){
+                                    cout << char_exp << " / " << "??";
+                                    char_level=9;
+                                }
+                                else{
+                                    cout << char_exp << " / " << 410;
+                                char_level=8;
+                                }
+
+                            }
+                            else{
+                                cout << char_exp << " / " << 241;
+                            char_level=7;
+                            }
+
+                        }
+                        else{
+                            cout << char_exp << " / " << 141;
+                        char_level=6;
+                        }
+
+                    }
+                    else{
+                        cout << char_exp << " / " << 83;
+                    char_level=5;
+                    }
+
+                }
+                else{
+                    cout << char_exp << " / " << 49;
+                char_level=4;
+                }
+
+            }
+            else{
+                cout << char_exp << " / " << 28;
+            char_level=3;
+            }
+
+        }
+        else{
+            cout << char_exp << " / " << 17;
+            char_level=2;
+        }
+    }
+    else{
+        cout << char_exp << " / " << 10;
+        char_level=1;
+    }
+}
+
+
+
+int Levelberechnung_quiet(){
+    char_exp=chest_1+(chest_2*5)+(chest_3*20);
+    if(char_exp>=10){
+        if(char_exp>=17){
+            if(char_exp>=28){
+                if(char_exp>=49){
+                    if(char_exp>=83){
+                        if(char_exp>=141){
+                            if(char_exp>=241){
+                                if(char_exp>=410){
+                                    char_level=9;
+                                }
+                                else{
+
+                                char_level=8;
+                                }
+
+                            }
+                            else{
+                            char_level=7;
+                            }
+
+                        }
+                        else{
+                        char_level=6;
+                        }
+
+                    }
+                    else{
+                    char_level=5;
+                    }
+
+                }
+                else{
+                char_level=4;
+                }
+
+            }
+            else{
+            char_level=3;
+            }
+
+        }
+        else{
+            char_level=2;
+        }
+    }
+    else{
+        char_level=1;
+    }
+
+}
 
 

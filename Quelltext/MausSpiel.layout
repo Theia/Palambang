@@ -11,10 +11,10 @@
 		<Cursor position="25576" topLine="974" />
 	</File>
 	<File name="Formatierung.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="591" topLine="339" />
+		<Cursor position="8765" topLine="474" />
 	</File>
 	<File name="Formatierung.h" open="1" top="0" tabpos="11">
-		<Cursor position="202" topLine="0" />
+		<Cursor position="303" topLine="0" />
 	</File>
 	<File name="Gegenstandsgenerierung.cpp" open="1" top="0" tabpos="2">
 		<Cursor position="8808" topLine="0" />
@@ -23,10 +23,13 @@
 		<Cursor position="641" topLine="0" />
 	</File>
 	<File name="Inventar.cpp" open="1" top="0" tabpos="13">
-		<Cursor position="1723" topLine="64" />
+		<Cursor position="4406" topLine="207" />
+	</File>
+	<File name="Inventar.h" open="1" top="0" tabpos="14">
+		<Cursor position="103" topLine="0" />
 	</File>
 	<File name="WorldGenerate.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="19507" topLine="228" />
+		<Cursor position="22492" topLine="994" />
 	</File>
 	<File name="WorldGenerate.h" open="1" top="0" tabpos="9">
 		<Cursor position="291" topLine="0" />
@@ -38,6 +41,6 @@
 		<Cursor position="467" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="1428" topLine="61" />
+		<Cursor position="1570" topLine="75" />
 	</File>
 </CodeBlocks_layout_file>

@@ -899,40 +899,40 @@ int Richtung(void){
 
             eingabe=getch();
                 if(eingabe==77){
-                    Curpos(60,0);
-                    cout << "       ";
-                    Curpos(60,0);
-                    cout << "rechts";
+                    Curpos(65,0);
+                    cout << " ";
+                    Curpos(65,0);
+                    cout << ">";
                     return 4;
                 }
 
 
                 if(eingabe==75){
-                    Curpos(60,0);
-                    cout << "       ";
-                    Curpos(60,0);
-                    cout << "links";
+                    Curpos(65,0);
+                    cout << " ";
+                    Curpos(65,0);
+                    cout << "<";
                     return 3;
                 }
 
                 if(eingabe==72){
-                    Curpos(60,0);
-                    cout << "       ";
-                    Curpos(60,0);
-                    cout << "oben";
+                    Curpos(65,0);
+                    cout << " ";
+                    Curpos(65,0);
+                    cout << "^";
                     return 1;
                 }
 
                 if(eingabe==80){
-                    Curpos(60,0);
-                    cout << "       ";
-                    Curpos(60,0);
-                    cout << "unten";
+                    Curpos(65,0);
+                    cout << " ";
+                    Curpos(65,0);
+                    cout << "v";
                     return 2;
                 }
         }
 
-        else if(eingabe==105){
+        else if(eingabe==105){      // Buchstabe i
             Inventar();
         }
 
@@ -987,8 +987,8 @@ int RichtungTest2(int richtung){
 
 
             LeerKomplett();
-        Rahmen();
-        RahmenLinks();
+            Rahmen();
+            RahmenLinks();
 
             return 2;
         }
@@ -1140,10 +1140,7 @@ int RichtungTest2(int richtung){
     }
 
     else{
-        Curpos(75,0);
-        cout << "Ne!";
         return 0;
-
     }
 
 }

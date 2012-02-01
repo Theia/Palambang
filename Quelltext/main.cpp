@@ -74,6 +74,10 @@ int hide_bild=0;
 float wert=0;
 int mengeverzauberungen=0;
 char name[100];
+int char_level=1;
+int char_exp=0;
+int char_life=0;
+int char_life_damage=0;
 
 int steps=0;
 int chest_1=0;
@@ -112,12 +116,13 @@ int main(){
 
     }
 */
+/*
 midiOutShortMsg(hMidiOut, (volume << 16) | (note << 8) | 0x91); // note on
 Sleep(1000);
 midiOutShortMsg(hMidiOut, (volume << 16) | (note << 8) | 0x81); // note off
 
 midiOutClose(hMidiOut);
-
+*/
 
 
 
@@ -143,13 +148,14 @@ midiOutClose(hMidiOut);
 
     WorldGenerate();
     BmpGenerate();
-
+    Lebensanzeige();
 
 while(1){
 
+        Farbe(8);
         if(kistegeoff==0){
             Curpos(1,0);
-            cout << "                                        ";
+            cout << "                ";
             Curpos(1,0);
             cout << "x:" << char_x << "  | y:" << char_y;
         }
@@ -162,20 +168,16 @@ while(1){
             MapNew2Rand();
             kistegeoff=0;
             RahmenMap();
-        }
+            Lebensanzeige();
+        };
 
-        Curpos(70,0);
-        cout << "   ";
-        Curpos(70,0);
-        cout << richtung;
-
-
-        Curpos(1,24);
-        cout << "                                                    ";
-        Curpos(1,24);
-        cout << "Aktuelles Geld: ";
+        Farbe(15);
         char_Geld=GeldConv(char_wert);
+        Curpos(17,0);
+        cout << "> ";
         AusgabeGeldConv(char_Geld);
+        Lebensanzeige();
+        Farbe(15);
 
 
         richtungok=RichtungTest2(richtung);

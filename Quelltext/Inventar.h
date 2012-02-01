@@ -3,6 +3,8 @@
 
 
 int Inventar();
+int Levelberechnung();
+int Levelberechnung_quiet();
 
 
 

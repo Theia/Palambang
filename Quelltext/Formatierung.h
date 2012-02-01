@@ -12,6 +12,7 @@ void Randomcounter();
 int Zufallsfarbe();
 int Zufall();
 void Nameinput();
+void Lebensanzeige();
 
 
 

@@ -14,6 +14,7 @@
 
 #include "Gegenstandsgenerierung.h"
 #include "EasyBMP.h"
+#include "Inventar.h"
 
 
 using namespace std;
@@ -22,6 +23,9 @@ using namespace std;
 int Zufallsfarbe();
 extern int zaubertextzeilen;
 extern char name[100];
+extern int char_life;
+extern int char_level;
+extern int char_life_damage;
 
 
 
@@ -488,4 +492,22 @@ void Nameinput(){
     Curpos(35,15);
     cout << "1";
     Sleep(1000);
+}
+
+
+
+void Lebensanzeige(){
+    Levelberechnung_quiet();
+    int zaehl=0;
+    char herz=3;
+    Farbe(12);
+    Curpos(1,24);
+    cout << "           ";
+    Curpos(1,24);
+    char_life=char_level+2;     // Anzahl der Herzen entspricht Level +2
+    while(zaehl<char_life-char_life_damage){
+        cout << herz;
+        zaehl++;
+    }
+
 }
