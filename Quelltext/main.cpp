@@ -86,6 +86,8 @@ time_t t_messure;
 
 
 int main(){
+    srand(time(NULL));
+
 
     Nameinput();
 
@@ -97,8 +99,9 @@ int main(){
 
     HMIDIOUT hMidiOut;
     UINT result = midiOutOpen(&hMidiOut, MIDI_MAPPER, 0, 0, 0);
-    if(result != MMSYSERR_NOERROR)
+    /*if(result != MMSYSERR_NOERROR){
     cout<< ("Geht nicht!");
+    }*/
 
     BYTE volume = 127;
     BYTE note = 72;  // Ein C
@@ -123,7 +126,6 @@ midiOutClose(hMidiOut);
     //Datum = GetCurrentTime();
 
 
-    srand( time(NULL) );
     int debug=0;
     Geld wert_Conv={0,0,0,0};
     GegenstandInfo halter = {0,0,0};

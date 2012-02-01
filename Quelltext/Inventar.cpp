@@ -21,18 +21,30 @@ extern int steps;
 extern int chest_1;
 extern int chest_2;
 extern int chest_3;
+extern char name[100];
 
 
 
 int Inventar(){
+    int m=0;
     LeerKomplett();
     RahmenMap();
     Curpos(3,3);
     Farbe(14);
     cout << "INVENTAR & STATISTIK";
 
-    Curpos(10,10);
 
+    Curpos(10,8);
+    Farbe(2);
+    cout << "Spielername: ";
+    Farbe(4);
+    while(name[m]!='\0'){
+        cout << name[m];
+        m++;
+    }
+    m=0;
+
+    Curpos(10,10);
     Farbe(10);
     cout << "Spielstart: ";
     Farbe(15);

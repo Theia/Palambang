@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "funktion.h"
+#include <MMsystem.h>
 
 #include "WorldGenerate.h"
 #include "Bilder.h"
@@ -387,14 +388,24 @@ int Zufallsfarbe(){
 
 void Nameinput(){
     Curpos(20,10);
+    Farbe(6);
     char hallo[100]="Hallo wie gehts!";
     char hallo2[100]="Wie ist dein Name?";
+    char quest1[100]="Viel gibt es nicht zu sagen.. ";
+    char quest2[100]="Finde einen Weg hier raus!";
+    HMIDIOUT hMidiOut;
+    UINT result = midiOutOpen(&hMidiOut, MIDI_MAPPER, 0, 0, 0);
     int n=0;
 
-    for (int k=0; k<20; k++){
-        cout << hallo[k];
+
+    //midiOutShortMsg(hMidiOut, (127 << 16) | (9000 << 8) | 0x91); // note on
+    for (int k=0; k<16; k++){
+        cout << hallo[k];;
+        midiOutShortMsg(hMidiOut, (80 << 16) | (75 << 8) | 0x91); // note on
         Sleep(60);
+        midiOutShortMsg(hMidiOut, (80 << 16) | (75 << 8) | 0x81); // note on
     }
+    Sleep(1000);
     Curpos(35,10);
     cout << " ";
     Sleep(500);
@@ -409,6 +420,9 @@ void Nameinput(){
     Sleep(400);
     Curpos(35,10);
     cout << "?";
+    midiOutShortMsg(hMidiOut, (80 << 16) | (80 << 8) | 0x91); // note on
+    Sleep(60);
+    midiOutShortMsg(hMidiOut, (80 << 16) | (80 << 8) | 0x81); // note on
     Sleep(1000);
     Curpos(20,10);
 
@@ -418,20 +432,60 @@ void Nameinput(){
         Sleep(20);
         n++;
     }
+    n=0;
 
+    Farbe(2);
     Curpos(22,11);
     for (int k=0; k<20; k++){
         cout << hallo2[k];
+
+        midiOutShortMsg(hMidiOut, (80 << 16) | (75 << 8) | 0x91); // note on
         Sleep(60);
+        midiOutShortMsg(hMidiOut, (80 << 16) | (75 << 8) | 0x81); // note on
     }
 
     Curpos(25,13);
+    Farbe(3);
+    cout << "-> ";
+    Farbe(4);
     gets(name);
 
+    LeerKomplett();
+    Curpos(22,12);
+    Farbe(6);
+    for (int k=0; k<30; k++){
+        cout << quest1[k];
+        midiOutShortMsg(hMidiOut, (80 << 16) | (75 << 8) | 0x91); // note on
+        Sleep(60);
+        midiOutShortMsg(hMidiOut, (80 << 16) | (75 << 8) | 0x81); // note on
+    }
 
+    Farbe(4);
+    while(name[n]!='\0'){
+        cout << name[n];
+        n++;
+        midiOutShortMsg(hMidiOut, (80 << 16) | (85 << 8) | 0x91); // note on
+        Sleep(60);
+        midiOutShortMsg(hMidiOut, (80 << 16) | (85 << 8) | 0x81); // note on
+        Sleep(200);
+    }
+    n=0;
 
-
-
-    Sleep(10000);
-
+    Curpos(24,13);
+    Farbe(6);
+    for (int k=0; k<25; k++){
+        cout << quest2[k];
+        midiOutShortMsg(hMidiOut, (80 << 16) | (75 << 8) | 0x91); // note on
+        Sleep(60);
+        midiOutShortMsg(hMidiOut, (80 << 16) | (75 << 8) | 0x81); // note on
+    }
+    Curpos(26,15);
+    cout << "Start in 3";
+    Sleep(1000);
+    Curpos(35,15);
+    cout << "2";
+    Sleep(1000);
+    Curpos(35,15);
+    cout << "1";
+    Sleep(1000);
 }
